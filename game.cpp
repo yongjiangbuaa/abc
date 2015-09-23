@@ -1,9 +1,11 @@
 //game work
-#include "MainRole.h"
+#include "common.h"
+#include "Role.h"
 
-class main{
-	MainRole mainRole = new MainRole();
-		mainRole.fight();  
+int main(){
+	Role* mainRole = new Role();
+	Role* enymy = new Role();
+	mainRole->fight(enymy);  
 }
 
 
@@ -13,15 +15,17 @@ class main{
 
 //物品  可分为 道具，装备，坐骑
 class Item{
+public:
 
-}
+};
 
 
 //背包
 class inventory{
-	Array[] Items;
+public:
+         std::vector<Item> Items;
 
-}
+};
 
 
 
