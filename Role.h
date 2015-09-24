@@ -1,5 +1,10 @@
+
+#ifndef __ABC__BRole__
+#define __ABC__BRole__
+
 #include "common.h"
 
+NS_B_BEGIN
 class Role {
 
 public:
@@ -22,3 +27,5 @@ virtual ~Role();
 private:
 
 };
+NS_B_END
+#endif

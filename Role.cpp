@@ -1,6 +1,8 @@
 #include "Role.h"
 #include "Logger.h"
+#include "GameClient.h"
 
+NS_B_BEGIN
 Role::Role()
 :
 		power(0),
@@ -44,7 +46,7 @@ bool Role::fight(Role* enymy){
     	//后台系统出战斗结果，
     	//包括战胜此敌人的掉落
     	//其他   
-    	int itemId = gameServer->fightResult(this,enymy);
+    	int itemId = GameClient::getInstance()->fightResult(this,enymy);
     	this->inventory.push_back(itemId);
     	this->updateUI();
     	return result;
@@ -58,23 +60,24 @@ bool Role::autoFight(){
 bool Role::equip(int item){
 	this->items.push_back(item); //挂上
 	//效果变化
-	gameServer->equipResult();
+	GameClient::getInstance()->equipResult();
 	this->updateUI();
 }
 
 
 void Role::updateUI(){
 	//更新界面数值
-	Logger.debug("power = " + this->power);
-	Logger.debug("hp = " + this->hp);
-	Logger.debug("mp = " + this->mp);
-	Logger.debug("armor = " + this->armor);
-	Logger.debug("attack = " + this->attack);
-	Logger.debug("power = " + this->power);
-	Logger.debug(this->items);
-	Logger.debug(this->inventory);		
+	Logger::debug("power = " + this->power);
+	Logger::debug("hp = " + this->hp);
+	Logger::debug("mp = " + this->mp);
+	Logger::debug("armor = " + this->armor);
+	Logger::debug("attack = " + this->attack);
+	Logger::debug("power = " + this->power);
+	Logger::debug(this->items);
+	Logger::debug(this->inventory);		
 }
 
 
 
 
+NS_B_END

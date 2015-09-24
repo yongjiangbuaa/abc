@@ -1,6 +1,13 @@
 //game work
+
+#ifndef __ABC__BGame__
+#define __ABC__BGame__
+
 #include "common.h"
 #include "Role.h"
+
+
+NS_B_BEGIN
 
 int main(){
 	Role* mainRole = new Role();
@@ -27,16 +34,5 @@ public:
 
 };
 
-
-
-
-
-
-
-
-//人
-
-
-
-
-
+NS_B_END
+#endif
