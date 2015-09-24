@@ -1,3 +1,5 @@
+//g++ -std=c++11 *.cpp 
+/**
 OBJS = MovieList.o Movie.o NameList.o Name.o Iterator.o
 CC = g++
 DEBUG = -g
@@ -28,3 +30,4 @@ clean:
 tar:
     tar cfv p1.tar Movie.h Movie.cpp Name.h Name.cpp NameList.h \
             NameList.cpp  Iterator.cpp Iterator.h
+**/
