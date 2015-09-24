@@ -5,7 +5,8 @@
 #include "common.h"
 
 NS_B_BEGIN
-class Role {
+class Role : BBase 
+{
 
 public:
 	std::vector<int> items;//

@@ -2,20 +2,22 @@
 
 NS_B_BEGIN
 
-static void debug(string* a )
+void Logger::debug(string* a )
 {
 	 	cout << &a;
 }
 
-static void debug(const char* a )
+void Logger::debug(char const* a )
 {
 	 	cout << &a;
 }
 
 
-static void debug(std::vector<int> a){
-	foreach{
-
+ void Logger::debug(std::vector<int> a)
+ {
+	for( int key : a)
+	{
+		cout << key;
 	}
 }
 NS_B_END

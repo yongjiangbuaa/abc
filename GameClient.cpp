@@ -2,14 +2,25 @@
 #include "Logger.h"
 NS_B_BEGIN
 
+static GameClient* s_sharedBGameClient = NULL;
+
+GameClient::GameClient()
+{
+
+}
+
+GameClient::~GameClient()
+{
+	CC_SAFE_RELEASE_NULL(s_sharedBGameClient);
+}
 
 GameClient* GameClient::getInstance()
 {
-	if (sInstance == NULL)
+	if (!s_sharedBGameClient )
 	{
-		sInstance = new GameClient();
+		s_sharedBGameClient = new GameClient();
 	}
-	return sInstance;
+	return s_sharedBGameClient;
 }
 
 void GameClient::fightResult(Role* a,Role* b)

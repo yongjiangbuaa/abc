@@ -5,11 +5,12 @@
 #include "common.h"
 
 NS_B_BEGIN
-class Logger{
+class Logger
+{
 	
 	public:
 	 static void debug(string* a );
-	 static void debug(const char* a );
+	 static void debug( char const * a );
  	 static void debug(std::vector<int>  a );
 };
 

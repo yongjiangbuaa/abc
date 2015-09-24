@@ -3,8 +3,7 @@
 #include "GameClient.h"
 
 NS_B_BEGIN
-Role::Role()
-:
+Role::Role():
 		power(0),
 		hp(0),
 		mp(0),
@@ -13,8 +12,14 @@ Role::Role()
 	{
 	//initaliise
 	}
+
+Role::~Role()
+{
+
+}	
 	//战斗
-bool Role::fight(Role* enymy){
+bool Role::fight(Role* enymy)
+{
     	//回合攻击，结算数值
 //    	copy = copyPlayer;
     	bool gameover = false;
@@ -23,19 +28,24 @@ bool Role::fight(Role* enymy){
     	int enymyLossHp = 0;
 
     	//战斗逻辑，可以在后台瞬间算完。也可以在客户端回合展现以及回放
-    	while(!gameover){
+    	while(!gameover)
+    	{
     		//sleep(3);//3秒一回合
-	    	if(lossHp < this->hp){
+	    	if(lossHp < this->hp)
+	    	{
 	    		lossHp -= enymy->attack;
-	    	}else{
+	    	}else
+	    	{
 	    		gameover = true;
 	    		result = 1;
 	    		continue;
 	    	}
 
-	    	if(enymyLossHp < enymy->hp){
+	    	if(enymyLossHp < enymy->hp)
+	    	{
 	    		enymyLossHp -= this->attack;
-	    	}else{
+	    	}else
+	    	{
 	    		gameover = true;
 	    		result = 0;
 	    		continue;
@@ -46,18 +56,19 @@ bool Role::fight(Role* enymy){
     	//后台系统出战斗结果，
     	//包括战胜此敌人的掉落
     	//其他   
-    	int itemId = GameClient::getInstance()->fightResult(this,enymy);
-    	this->inventory.push_back(itemId);
+    	GameClient::getInstance()->fightResult(this,enymy);
     	this->updateUI();
     	return result;
     }
 
 	//挂机隔段时间打一次给定敌人涨数值
-bool Role::autoFight(){
+bool Role::autoFight()
+{
     	this->fight( this);
-    }
+}
 
-bool Role::equip(int item){
+bool Role::equip(int item)
+{
 	this->items.push_back(item); //挂上
 	//效果变化
 	GameClient::getInstance()->equipResult();
@@ -65,7 +76,8 @@ bool Role::equip(int item){
 }
 
 
-void Role::updateUI(){
+void Role::updateUI()
+{
 	//更新界面数值
 	Logger::debug("power = " + this->power);
 	Logger::debug("hp = " + this->hp);
