@@ -7,20 +7,19 @@
 #include "Role.h"
 
 
-NS_B_BEGIN
 
 int main(int , char**)
 {
-	cout << "hellp c++";
-	/**
-	Role* mainRole = new Role();
-	Role* enymy = new Role();
+//	cout << "hellp c++";
+
+	abc::Role* mainRole = new abc::Role();
+	abc::Role* enymy = new abc::Role();
 	mainRole->fight(enymy); 
 
 	delete mainRole;
 	delete enymy;
 	return 0;
-	**/ 
+ 
 }
 
 
@@ -45,5 +44,4 @@ public:
 
 };
 **/
-NS_B_END
 #endif
