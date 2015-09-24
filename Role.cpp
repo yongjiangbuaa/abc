@@ -73,13 +73,21 @@ bool Role::equip(int item)
 	//效果变化
 	GameClient::getInstance()->equipResult();
 	this->updateUI();
+	return true;
 }
 
+string to_string(int a)
+{
+	return string("abc");
+}
 
 void Role::updateUI()
 {
+//	std::string s = to_string(this->power);
+//	char const *pchar = s.c_str();  //use char const* as target type
 	//更新界面数值
-	Logger::debug("power = " + this->power);
+	Logger::debug(string("power = ").append(to_string(this->power)).c_str());
+	/**
 	Logger::debug("hp = " + this->hp);
 	Logger::debug("mp = " + this->mp);
 	Logger::debug("armor = " + this->armor);
@@ -87,6 +95,7 @@ void Role::updateUI()
 	Logger::debug("power = " + this->power);
 	Logger::debug(this->items);
 	Logger::debug(this->inventory);		
+	**/
 }
 
 

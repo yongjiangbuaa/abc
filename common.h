@@ -5,6 +5,8 @@
 #include <iostream>
 #include <vector>
 #include <map>
+#include <string>
+#include <sstream>
 using namespace std;
 
 #define NS_B_BEGIN namespace abc {  
