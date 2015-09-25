@@ -8,9 +8,12 @@ NS_B_BEGIN
 class GameClient :  BBase
 {
 public:
+	static GameClient* getInstance();
 	void fightResult(Role* a,Role* b);
 	void equipResult();
-	static GameClient* getInstance();
+	void showVentory();
+	void showRole();
+	void showMap();
 private:
 	GameClient();
 	virtual ~GameClient();

@@ -1,8 +1,9 @@
 OBJS = game.o Role.o GameClient.o Logger.o
-CC = g++
+CC = gcc
 DEBUG = -g
 CFLAGS = -std=c++11 -Wall -c $(DEBUG)
-LFLAGS = -std=c++11 -Wall $(DEBUG)
+LFLAGS = -std=c++11 -Wall  -stdlib=libc++ $(DEBUG) #mac
+# LFLAGS = -std=c++11 -Wall   $(DEBUG) #win
 
 g1 : $(OBJS)
 	$(CC)	$(LFLAGS)	$(OBJS) -o g1

@@ -65,6 +65,7 @@ bool Role::fight(Role* enymy)
 bool Role::autoFight()
 {
     	this->fight( this);
+    	return true;
 }
 
 bool Role::equip(int item)
@@ -76,10 +77,13 @@ bool Role::equip(int item)
 	return true;
 }
 
+//mingw 下to_string bug.只好自己定义一个
+/**
 string to_string(int a)
 {
 	return string("abc");
 }
+**/
 
 void Role::updateUI()
 {
@@ -87,15 +91,12 @@ void Role::updateUI()
 //	char const *pchar = s.c_str();  //use char const* as target type
 	//更新界面数值
 	Logger::debug(string("power = ").append(to_string(this->power)).c_str());
-	/**
-	Logger::debug("hp = " + this->hp);
-	Logger::debug("mp = " + this->mp);
-	Logger::debug("armor = " + this->armor);
-	Logger::debug("attack = " + this->attack);
-	Logger::debug("power = " + this->power);
-	Logger::debug(this->items);
-	Logger::debug(this->inventory);		
-	**/
+	Logger::debug(string("hp = " ).append(to_string(this->hp)).c_str());
+	Logger::debug(string("mp = ").append(to_string(this->mp)).c_str());
+	Logger::debug(string("armor = ").append(to_string(this->armor)).c_str());
+	Logger::debug(string("attack = ").append(to_string(this->attack)).c_str());
+//	Logger::debug(this->items);
+//	Logger::debug(this->inventory);		
 }
 
 
