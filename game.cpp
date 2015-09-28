@@ -13,15 +13,15 @@ int main(int , char**)
 //	cout << "hellp c++";
 
 	//init user data  初始化用户数据，登录
-	string = loadUserData("user1001.json");
-	InitializeGameWorld(string);
-
+	string = GameWorld->getInstance()->loadUserData("user1001.json");
+	GameWorld->getInstance()->InitializeGameWorld(string);
+	GameWorld->getInstance()->show(GameScene->getInstance());  //GameWorld初始化以后显示主场景 。对于RPG则是角色  对于SLG则是城堡，主角是头像。
 	abc::Role* mainRole = new abc::Role();
 	abc::Role* enymy = new abc::Role();
 	mainRole->fight(enymy); 
 
 	string str=SerializeGameWorld();
-	setDataToFile(str,"user1001.json");//保存一个战斗回合的数据
+	GameWorld->getInstance->setDataToFile(str,"user1001.json");//保存一个战斗回合的数据
 
 	
 	delete mainRole;
