@@ -10,12 +10,17 @@
 
 int main(int , char**)
 {
-//	cout << "hellp c++";
-
+	cout << "hellp c++";
+	cout << &char*;
 	//init user data  初始化用户数据，登录
-	string = GameWorld->getInstance()->loadUserData("user1001.json");
-	GameWorld->getInstance()->InitializeGameWorld(string);
-	GameWorld->getInstance()->show(GameScene->getInstance());  //GameWorld初始化以后显示主场景 。对于RPG则是角色  对于SLG则是城堡，主角是头像。
+	GameWorld::shared()->InitializeGameWorld(string);// 用数据初始化各个模型Role，Ventory,PVE,PVP
+	GameWorld::shared()->show(GameScene->getInstance());  //场景只管把模型揪出来组成故事。GameWorld初始化以后显示主场景 。
+	//对于RPG则是角色  对于SLG则是城堡，主角是头像。 对于SLG。兵是英雄的血。
+	
+
+	//TODO  初始化操作界面UIController;
+	uiController(int,char**);//不断接受命令行参数，控制其他。目前唯一的控制界面
+	
 	abc::Role* mainRole = new abc::Role();
 	abc::Role* enymy = new abc::Role();
 	mainRole->fight(enymy); 
@@ -23,11 +28,17 @@ int main(int , char**)
 	string str=SerializeGameWorld();
 	GameWorld->getInstance->setDataToFile(str,"user1001.json");//保存一个战斗回合的数据
 
-	
+
+
 	delete mainRole;
 	delete enymy;
 	return 0;
  
+}
+
+
+void uiController(int,char**){
+
 }
 
 
