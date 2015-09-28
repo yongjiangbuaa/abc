@@ -12,10 +12,18 @@ int main(int , char**)
 {
 //	cout << "hellp c++";
 
+	//init user data  初始化用户数据，登录
+	string = loadUserData("user1001.json");
+	InitializeGameWorld(string);
+
 	abc::Role* mainRole = new abc::Role();
 	abc::Role* enymy = new abc::Role();
 	mainRole->fight(enymy); 
 
+	string str=SerializeGameWorld();
+	setDataToFile(str,"user1001.json");//保存一个战斗回合的数据
+
+	
 	delete mainRole;
 	delete enymy;
 	return 0;
