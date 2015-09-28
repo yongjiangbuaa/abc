@@ -1,6 +1,6 @@
 
-#ifndef __ABC__BGameClient__
-#define __ABC__BGameClient__
+#ifndef __B__BGameClient__
+#define __B__BGameClient__
 
 #include "common.h"
 #include "Role.h"

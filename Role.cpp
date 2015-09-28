@@ -13,6 +13,11 @@ Role::Role():
 	//initaliise
 	}
 
+Role::Role(string a )
+{
+
+}
+
 Role::~Role()
 {
 

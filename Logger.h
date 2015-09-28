@@ -1,6 +1,6 @@
 
-#ifndef __ABC__BLogger__
-#define __ABC__BLogger__
+#ifndef __B__BLogger__
+#define __B__BLogger__
 
 #include "common.h"
 
@@ -11,7 +11,7 @@ class Logger
 	public:
 	 static void debug(string* a );
 	 static void debug( char const * a );
- 	 static void debug(std::vector<int>  a );
+ 	 static void debug(IntArray  a );
 };
 
 NS_B_END

@@ -9,13 +9,13 @@ class Role : BBase
 {
 
 public:
-	std::vector<int> items;//
+	IntArray items;//
 	int power;//总战力	
 	int hp;//血
 	int mp;//魔法值
 	int armor;//防御    
 	int attack;//攻击
-	std::vector<int> inventory;
+	IntArray inventory;
 
 bool fight(Role* enymy);
 bool autoFight();
@@ -24,6 +24,7 @@ bool showStatusOnUI();
 void updateUI();
 
 Role();
+Role(string a );
 virtual ~Role();
 private:
 

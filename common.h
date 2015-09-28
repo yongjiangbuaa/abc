@@ -1,6 +1,6 @@
 
-#ifndef __ABC__BCommon__
-#define __ABC__BCommon__
+#ifndef __B__BCommon__
+#define __B__BCommon__
 
 #include <iostream>
 #include <vector>
@@ -15,7 +15,12 @@ using namespace std;
 #define CC_SAFE_RELEASE_NULL(p)        do { if(p) { (p)->release(); (p) = 0; } } while(0)
 
 #include "BBase.h"
+
+
+
 NS_B_BEGIN
+#define StringArray std::vector<string> 
+#define IntArray    std::vector<int> 
 
 
 

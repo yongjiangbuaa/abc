@@ -13,7 +13,7 @@ void Logger::debug(char const* a )
 }
 
 
- void Logger::debug(std::vector<int> a)
+ void Logger::debug(IntArray a)
  {
 	for( int key : a)
 	{
